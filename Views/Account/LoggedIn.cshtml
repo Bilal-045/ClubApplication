@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "LoggedIn";
+    Layout = "~/Views/Shared/_Layout_Login.cshtml";
+}
+
+
+
+<h4>Hello @HttpContext.Current.Session["Username"].ToString()</h4>
+
+

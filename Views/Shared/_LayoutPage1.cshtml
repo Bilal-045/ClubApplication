@@ -1,0 +1,269 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewBag.Title</title>
+    <link href="~/css/style-starter.css" rel="stylesheet" />
+    <a href="~/fonts/fontawesome-webfont.eot"></a>
+    <a href="~/fonts/fontawesome-webfont.ttf"></a>
+    <a href="~/fonts/fontawesome-webfont.woff"></a>
+    <a href="~/fonts/fontawesome-webfont.woff2"></a>
+    <a href="~/fonts/FontAwesome.otf"></a>
+    
+    <script src="~/js/jquery-3.3.1.min.js"></script>
+    <script src="~/js/jquery.countup.js"></script>
+    <script src="~/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/js/jquery.waypoints.min.js"></script>
+    <script src="~/js/owl.carousel.js"></script>
+    <script src="~/js/theme-change.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    
+    <!--header-->
+    <header id="site-header" class="fixed-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <h1>
+
+                    <a class="navbar-brand" href="#index.html">
+                        <img src="~/images/logo.jpg" alt="Your logo" title="Your logo" style="height:35px;" />
+
+                    </a>
+                </h1>
+                <button class="navbar-toggler collapsed"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+
+                    @*<span class="fa icon-expand fa-bars"></span>
+                    <span class="fa icon-close fa-times"></span>*@
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                @*<div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li>@Html.ActionLink("Home ", "Index", "Home", new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("About  ", "About", "Home", new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Contact  ", "Contact", "Home", new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Services  ", "Services", "Home", new { @class = "nav-link" })</li>
+                    </ul>
+                </div>*@
+
+
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li>@Html.ActionLink("Home ", "Index", "Home", new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("About  ", "About", "Home", new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Contact  ", "Contact", "Home", new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Services  ", "Services", "Home", new { @class = "nav-link" })</li>
+                    </ul>
+                    <ul class="navbar-nav search-right mt-lg-0 mt-2">
+
+                        <li class="nav-item">
+
+                            @if (@HttpContext.Current.Session["Username"] == null)
+                            {
+                                <ul class="navbar-nav">
+                                    @*<li>@Html.ActionLink("Sign Up " , "SignUp" , "Account", new { @class = "nav-link" })</li>*@
+                                    <a href="~/Account/SignUp" class="nav-link">Sign UP</a>
+                                    <a href="~/Account/Login" class="nav-link">Login</a>
+                                    @*<li>@Html.ActionLink("Login  ", "Login", "Account", new { @class = "nav-link" })</li>*@
+                                </ul>
+
+                            }
+                            else
+                            {
+                                @*<ul class="navbar-nav">
+                                    <li>@Html.ActionLink("Logout ", "Logout", "Account", new { @class = "nav-link" })</li>
+                                </ul>*@
+
+                                <ul class="nav-link">
+                                    <text> Welcome @HttpContext.Current.Session["Username"].ToString()</text>
+                                    &nbsp;
+                                    &nbsp;
+                                    <input type="button" value="Logout" onclick="location.href='@Url.Action(  "Logout", "Account")'" />
+                                </ul>
+
+
+                            }
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+        </div>
+     
+    </header>
+    <!--/header-->
+
+
+    <div>
+        @RenderBody()
+    </div>
+    <!-- footer-66 -->
+    <footer class="w3l-footer-66">
+        <section class="footer-inner-main">
+            <div class="footer-hny-grids py-5">
+                <div class="container py-lg-4">
+                    <div class="text-txt">
+                        <div class="row newsletter-grids-footer">
+                            <div class="col-lg-6 newsletter-text pr-lg-5">
+                                <h3 class="hny-title two">Newsletter</h3>
+                                <h4>
+                                    Sign up for our monthly newsletter to get the latest news, volunteer opportunities,
+                                </h4>
+                            </div>
+                            <div class="col-lg-6 newsletter-right">
+                                <form action="#" method="post" class="footer-newsletter">
+
+                                    <input type="email" name="email" class="form-input" placeholder="Enter your email..">
+
+                                    <button type="submit" class="btn">Subscribe</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="right-side">
+                            <div class="row sub-columns">
+                                <div class="col-lg-4 col-md-6 sub-one-left pr-lg-4">
+                                    <h2>
+                                        <a class="navbar-brand" href="index.html">
+                                            <span>Tech</span>vales
+                                        </a>
+                                    </h2>
+                                    <!-- if logo is image enable this -->
+                                    <a class="navbar-brand" href="#index.html">
+                                        <img src="~/images/logo.jpg" alt="Your logo" title="Your logo" style="height:35px;" />
+
+                                    </a>
+                                    <p class="pr-lg-4">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        Consequuntur hic odio voluptatem tenetur consequatur.Lorem ipsum dolor sit amet
+                                        consectetur adipisicing elit.
+                                    </p>
+                                    <div class="columns-2">
+                                        <ul class="social">
+                                            <li>
+                                                <a href="#facebook"><span class="fa fa-facebook" aria-hidden="true"></span></a>
+                                            </li>
+                                            <li>
+                                                <a href="#linkedin"><span class="fa fa-linkedin" aria-hidden="true"></span></a>
+                                            </li>
+                                            <li>
+                                                <a href="#twitter"><span class="fa fa-twitter" aria-hidden="true"></span></a>
+                                            </li>
+                                            <li>
+                                                <a href="#google"><span class="fa fa-google-plus" aria-hidden="true"></span></a>
+                                            </li>
+                                            <li>
+                                                <a href="#github"><span class="fa fa-github" aria-hidden="true"></span></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 sub-one-left">
+                                    <h6>Our Services</h6>
+                                    <div class="mid-footer-gd sub-two-right">
+
+                                        <ul>
+                                            <li>
+                                                <a href="about.html"><span class="fa fa-angle-double-right mr-2"></span> About</a>
+                                            </li>
+                                            <li>
+                                                <a href="services.html"><span class="fa fa-angle-double-right mr-2"></span> Services</a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><span class="fa fa-angle-double-right mr-2"></span> Car Wash</a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><span class="fa fa-angle-double-right mr-2"></span>Electrical system</a>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                <a href="#"><span class="fa fa-angle-double-right mr-2"></span>Tire and wheel</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="fa fa-angle-double-right mr-2"></span>Help
+                                                    Orphan
+                                                </a>
+                                            </li>
+                                            <li><a href="#support"><span class="fa fa-angle-double-right mr-2"></span>Career</a></li>
+                                            <li>
+                                                <a href="contact.html"><span class="fa fa-angle-double-right mr-2"></span>Contact US</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 sub-one-left">
+                                    <h6>Contact Info</h6>
+                                    <div class="sub-contact-info">
+                                        <p>Address:  308-A Street 74, F-17/2 Islamabad, Pakistan.</p>
+                                        <p class="my-3">Phone: <strong><a href="tel:+(92) 318 1988 435">+(92) 318 1988 435</a></strong></p>
+                                        <p>E-mail:<strong> <a href="mailto:info@techvales.com">info@techvales.com</a></strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="below-section">
+                <div class="container">
+                    <div class="copyright-footer">
+                        <div class="columns text-lg-left">
+                            <p>© 2022 Techvales. All rights reserved</p>
+                        </div>
+                        <ul class="columns text-lg-right">
+                            <li>
+                                <a href="#">Privacy Policy</a>
+                            </li>
+                            <li>|</li>
+                            <li>
+                                <a href="#">Terms Of Use</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- copyright -->
+            <!-- move top -->
+            <button onclick="topFunction()" id="movetop" title="Go to top">
+                <span class="fa fa-long-arrow-up" aria-hidden="true"></span>
+            </button>
+            <script>
+                // When the user scrolls down 20px from the top of the document, show the button
+                window.onscroll = function () {
+                    scrollFunction()
+                };
+
+                function scrollFunction() {
+                    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                        document.getElementById("movetop").style.display = "block";
+                    } else {
+                        document.getElementById("movetop").style.display = "none";
+                    }
+                }
+
+                // When the user clicks on the button, scroll to the top of the document
+                function topFunction() {
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
+                }
+            </script>
+            <!-- /move top -->
+
+        </section>
+    </footer>
+    <!--//footer-66 -->
+
+</body>
+</html>

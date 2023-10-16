@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PrimeScoutsModelStoreContainer" CdmEntityContainer="PrimeScoutsEntities1">
+    <EntitySetMapping Name="Agent_details">
+      <EntityTypeMapping TypeName="PrimeScoutsModel.Agent_details">
+        <MappingFragment StoreEntitySet="Agent_details">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="Full_Name" ColumnName="Full_Name" />
+          <ScalarProperty Name="Agent_cat" ColumnName="Agent_cat" />
+          <ScalarProperty Name="club_details" ColumnName="club_details" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="Proof" ColumnName="Proof" />
+          <ScalarProperty Name="approval" ColumnName="approval" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONTACTs">
+      <EntityTypeMapping TypeName="PrimeScoutsModel.CONTACT">
+        <MappingFragment StoreEntitySet="CONTACT">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Player_details">
+      <EntityTypeMapping TypeName="PrimeScoutsModel.Player_details">
+        <MappingFragment StoreEntitySet="Player_details">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="Full_Name" ColumnName="Full_Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="shoe" ColumnName="shoe" />
+          <ScalarProperty Name="Medical_issues" ColumnName="Medical_issues" />
+          <ScalarProperty Name="Injuries" ColumnName="Injuries" />
+          <ScalarProperty Name="Athletic_history" ColumnName="Athletic_history" />
+          <ScalarProperty Name="Weekly_trg" ColumnName="Weekly_trg" />
+          <ScalarProperty Name="occupation" ColumnName="occupation" />
+          <ScalarProperty Name="Proof" ColumnName="Proof" />
+          <ScalarProperty Name="why_you" ColumnName="why_you" />
+          <ScalarProperty Name="goal" ColumnName="goal" />
+          <ScalarProperty Name="approval" ColumnName="approval" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Videos">
+      <EntityTypeMapping TypeName="PrimeScoutsModel.Video">
+        <MappingFragment StoreEntitySet="Videos">
+          <ScalarProperty Name="VId" ColumnName="VId" />
+          <ScalarProperty Name="Vname" ColumnName="Vname" />
+          <ScalarProperty Name="Vpath" ColumnName="Vpath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USERs">
+      <EntityTypeMapping TypeName="PrimeScoutsModel.USER">
+        <MappingFragment StoreEntitySet="USER">
+          <ScalarProperty Name="REG_STATUS" ColumnName="REG_STATUS" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Isremembered" ColumnName="Isremembered" />
+          <ScalarProperty Name="Isactive" ColumnName="Isactive" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

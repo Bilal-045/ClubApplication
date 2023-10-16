@@ -1,0 +1,100 @@
+﻿
+@model techwales.Models.USER
+
+
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout_Login.cshtml";
+}
+
+
+<div class="container">
+    <br />
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8 offset-sm-2 col-md-4 offset-md-4 border border-primary rounded pl-5 pr-5 pb-5 pt-5">
+            <div class="text-center">
+                <a class="text-light btn btn-primary font-weight-bold"
+                   @Html.ActionLink("Sign Up ", "SignUp", "User", new { @class = "nav-link" })
+                   </a>
+            </div>
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @if (ViewBag.Message != null)
+            {
+
+                <div class="form-group">
+
+                    <div class="col-md-10">@ViewBag.Message</div>
+
+                </div>
+            }
+            <form method="post" asp-action="Login">
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" , @type = "password" } })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" class="btn btn-block btn-primary mb-2" value="Log In" />
+                </div>
+            </form>
+            <div class="text-center">
+                <a class="text-primary" asp-action="forgotUsername">Forgot Username</a>   <a class="text-primary" asp-action="ForgotPassword">Forgot Password</a>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+
+
+
+
+@*<div class="form-horizontal">
+    <h4>USER</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
+
+
+
+@*<div class="form-group">
+        @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Login" class="btn btn-default" />
+        </div>
+    </div>*@
+@*</div>*@
+
+
+

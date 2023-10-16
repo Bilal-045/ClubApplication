@@ -1,0 +1,58 @@
+﻿ 
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>U_video</title>
+    <script src="~/js/bootstrap.min.js"></script>
+</head>
+<body>
+    @if (ViewBag.Message != null)
+    {
+
+        <div class="form-group">
+
+            <div class="col-md-10">@ViewBag.Message</div>
+            <textarea>AAA</textarea>
+        </div>
+    }
+    <div class="container">
+        @using (Html.BeginForm("U_video", "VideoUpload", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div class="form-group">
+
+                <label>Upload Video File</label>
+                <div class="input-group">
+                    @Html.TextBox("videofile", "", new { Type = "file" })
+                    <input type="submit" value="Upload Video Files" />
+                </div>
+            </div>
+        }
+
+        @foreach(var item in Model)
+            {
+
+
+
+            <div class="col-sm-4 col-md-4 col-xl-12">
+
+                <div class="title" style="width:250px; height:150px;">@item.Vname</div>
+                <hr/>
+                <div class="video-frame">
+                    <video style="width:250px; height:250px;" controls>
+                        <source src="@Url.Content(item.Vpath)" type="video/mp4" />
+
+                    </video>
+                </div>
+            </div>
+            }
+
+
+    </div>
+</body>
+</html>

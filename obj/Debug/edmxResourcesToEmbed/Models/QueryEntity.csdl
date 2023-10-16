@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PrimeScoutsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Agent_details">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="Full_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Agent_cat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="club_details" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Proof" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="approval" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="CONTACT">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Subject" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Player_details">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="Full_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Height" Type="Double" />
+    <Property Name="Weight" Type="Double" />
+    <Property Name="shoe" Type="Double" />
+    <Property Name="Medical_issues" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Injuries" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Athletic_history" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Weekly_trg" Type="Double" />
+    <Property Name="occupation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Proof" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="why_you" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="goal" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="approval" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Video">
+    <Key>
+      <PropertyRef Name="VId" />
+    </Key>
+    <Property Name="VId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Vname" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Vpath" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="PrimeScoutsEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Agent_details" EntityType="Self.Agent_details" />
+    <EntitySet Name="CONTACTs" EntityType="Self.CONTACT" />
+    <EntitySet Name="Player_details" EntityType="Self.Player_details" />
+    <EntitySet Name="Videos" EntityType="Self.Video" />
+    <EntitySet Name="USERs" EntityType="PrimeScoutsModel.USER" />
+  </EntityContainer>
+  <EntityType Name="USER">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Isactive" Type="Boolean" />
+    <Property Name="Isremembered" Type="Boolean" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="REG_STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

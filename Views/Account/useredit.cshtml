@@ -1,0 +1,80 @@
+﻿@model techwales.Models.USER
+<script src="~/js/jquery-3.3.1.min.js"></script>
+@*<script src="~/Scripts/jquery-3.4.1.min.js"></script>*@
+@*<script src="~/Scripts/jquery.validate.min.js"></script>*@
+<link href="~/css/style-starter.css" rel="stylesheet" />
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-8 offset-sm-2 border border-primary rounded pl-5 pr-5 pb-5 pt-5">
+                <div class="form-horizontal">
+                    <h4>USER</h4>
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.Id)
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    @Html.HiddenFor(model => model.Password)
+                    <script>
+                    var pas = @Html.HiddenFor(model => model.Password);
+
+
+                    </script>
+                   @*@Html.TextBoxFor(model => model.ConfirmPassword, new { @Value = @Html.HiddenFor(model => model.Password), @type = "hidden" });*@
+
+                    @Html.TextBoxFor(model => model.ConfirmPassword, new { @Value = Model.Password, @type = "hidden" });
+                    @Html.HiddenFor(model => model.REG_STATUS)
+                    @Html.HiddenFor(model => model.Isremembered)
+                    @Html.HiddenFor(model => model.Isactive)
+                    @Html.HiddenFor(model => model.Type)
+
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+
+                            <input type="submit" value="Save" class="btn btn-block btn-primary mb-2 " />
+                        </div>
+                    </div>
+                </div>
+              
+                
+                </div>
+            </div>
+        </div>
+                
+                }
+
+                <div>
+                    @Html.ActionLink("Back to List", "UserList")
+                </div>

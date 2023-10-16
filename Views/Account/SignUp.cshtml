@@ -1,0 +1,146 @@
+﻿@model techwales.Models.USER
+
+@{
+    ViewBag.Title = "SignUp";
+    Layout = "~/Views/Shared/_Layout_Login.cshtml";
+}
+
+<h2>SignUp</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>User</h4>
+        <hr />
+
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-8 offset-sm-2 border border-primary rounded pl-5 pr-5 pb-5 pt-5">
+
+                    @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @if (ViewBag.Message != null)
+                        {
+
+                            <div class="form-group">
+
+                                <div class="col-md-10">@ViewBag.Message</div>
+
+                            </div>
+                        }*@
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @if (ViewBag.Message != null)
+                    {
+
+                        <div class="form-group">
+                            <div class="text-center">
+                                <text><font color="red">@ViewBag.Message</font> </text>
+                            </div>
+                        </div>
+                    }
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Username"  } })
+                            @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Type, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.RadioButtonFor(expression: model => model.Type, value: "Athlete") Athlete
+
+                            @Html.RadioButtonFor(expression: model => model.Type, value: "Scout") Scout
+                            <div>@Html.ValidationMessageFor(Model => Model.Type, "", new { @class = "error" })</div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter email Address" } })
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Cell Number" } })
+                            @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Password", @type = "password" } })
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                            @Html.LabelFor(model => model.ConfirmPassword, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control", @placeholder = "Confirm Password", @type = "password" } })
+                                @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+
+
+                    @*<div class="form-group">
+                            @Html.LabelFor(model => model.Isactive, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                <div class="checkbox">
+                                    @Html.EditorFor(model => model.Isactive)
+                                    @Html.ValidationMessageFor(model => model.Isactive, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Isremembered, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                <div class="checkbox">
+                                    @Html.EditorFor(model => model.Isremembered)
+                                    @Html.ValidationMessageFor(model => model.Isremembered, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>*@
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Create" class="btn btn-block btn-primary mb-2" />
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    //
+
+}
+
+<div>
+    <a href="~/Account/Login" class="nav-item"> Back to Login </a>
+    <a href="~/Home/Index" class="nav-item"> Back to Home </a>
+</div>
+<script src="~/js/jquery-3.3.1.min.js"></script>
+@*<script src="~/bundles/jqueryval"></script>*@
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
